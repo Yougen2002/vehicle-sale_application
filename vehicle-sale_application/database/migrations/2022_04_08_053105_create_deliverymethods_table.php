@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('deliverymethods', function (Blueprint $table) {
             $table->id();
+         
+            
+            $table -> string('name'); //varchar 255
+            $table -> boolean('is active') -> default(true); //tiny 2-0 or1
+            $table -> longText('description');//text
+            $table -> string('image')-> nullable(); //varchar 255
+            $table -> softDeletes();
             $table->timestamps();
         });
     }
